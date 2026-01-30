@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+.welcome-section {
+  text-align: center;
+  padding: 4rem 1.2rem;
+  background: var(--card);
+  border-bottom: 1px solid #910030;
+  box-shadow: 0 6px 16px rgba(255, 122, 162, 0.12);
+}
+
+.welcome-section h1 {
+  font-size: 2.2rem;
+  color:#e50914 ;
+  margin: 0;
+  font-weight: 700;
+}
+.welcome-section h1 {
+  font-size: 2.2rem;
+  color: #e50914;
+  margin: 0;
+  font-weight: 700;
+  position: relative;
+  animation: slideText 5s linear infinite;
+}
+/* Keyframes for sliding effect */
+@keyframes slideText {
+  0% {
+    transform: translateX(100%); /* start off to the right */
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(0); /* move into place */
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0); /* stay visible */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%); /* slide out to the left */
+    opacity: 0;
+  }
+}
+
+.netflix-nav {
+  background-color: #111;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.netflix-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.netflix-nav a {
+  color: #e50914; /* Netflix red */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.netflix-nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #e50914;
+}
+
+
+.watchlist {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.watchlist img {
+  width: 30px;
+  height: 30px;
+}
+
+#current-genre {
+  text-align: center;
+  margin-top: 20px;
+  color: #ff4d4d;
+}
+
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+}
+
+.movie-card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(255,0,0,0.3);
+  padding: 15px;
+}
+
+.poster {
+  width: 100%;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.poster {
+  width: 100%;
+  height: 270px; /* fixed height for consistency */
+  object-fit: cover; /* ensures image fills space without distortion */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+.about-us {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-us h1 {
+  font-size: 36px;
+  color: #e50914;
+  margin-bottom: 20px;
+}
+
+.about-us h2 {
+  font-size: 24px;
+  color: #e50914;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.about-us p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.about-us ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-us li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.about-us a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.about-us a:hover {
+  color: #e50914;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 20px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #e50914;
+}
+
+.footer-column p,
+.footer-column ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #e50914;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 13px;
+  color: #777;
+}
+    </style>
+  <meta charset="UTF-8">
+  <title>NurFlix</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="netflix-nav">
+   <ul>
+    <li><a href="homepage.html"> Home</a></li>
+    <li><a href="about_us.html"> About Us</a></li>
+     <div class="genre-dropdown">
+    <a href="genre.html" class="genre-label">Genre</a>
+    <div class="genre-menu">
+    <li><a href="anime.html">Anime</a></li>
+    <li><a href="animation.html">Animation</a></li>
+    <li><a href="crime.html">Crime</a></li>
+    <li><a href="history.html">History</a></li>
+    <li><a href="horror.html">Horror</a></li>
+    <li><a href="psychology.html">Psychology</a></li>
+    <li><a href="lokal.html">Lokal</a></li>
+    <li><a href="romance.html">Romance</a></li>
+  </ul>
+</nav>
+<!-- WELCOME -->
+  <section id="welcome" class="welcome-section">
+ <h1>Hello, welcome to Cinema Peak</h1>
+  </section>
+<body>
+  <section class="about-us">
+    <div class="about-container">
+      <h1>About Cinema Peak</h1>
+      <p>
+        Flix is a student-developed streaming-inspired platform, created by four passionate individuals 
+        who share a vision of making entertainment accessible, engaging, and innovative. 
+        Inspired by Netflix’s groundbreaking approach, Flix combines sleek design with fresh ideas 
+        to deliver a unique browsing experience.
+      </p>
+
+      <h2>Our Story</h2>
+      <p>
+        Founded as a university project, Flix was born out of curiosity and creativity. 
+        The four students behind Flix wanted to go beyond simply replicating Netflix’s interface. 
+        They aimed to understand its strengths, identify its weaknesses, and innovate with new features 
+        that could inspire future streaming platforms.
+      </p>
+
+      <h2>Our Mission</h2>
+      <p>
+        At Flix, our mission is to empower users with a visually engaging and user-friendly platform 
+        that showcases the potential of modern web development. We believe entertainment should be 
+        accessible to everyone, and our project reflects that commitment.
+      </p>
+
+      <h2>Our Values</h2>
+      <ul>
+        <li><strong>Innovation:</strong> Always pushing boundaries in design and functionality.</li>
+        <li><strong>Collaboration:</strong> Built by a team of four students working together.</li>
+        <li><strong>Accessibility:</strong> Making streaming-style interfaces simple and intuitive.</li>
+        <li><strong>Creativity:</strong> Combining technical skills with storytelling and design.</li>
+      </ul>
+
+      <h2>Contact Us</h2>
+      <p>
+        📧 Email: <a href="mailto:support@netflix.com">support@flix.com</a><br>
+        📞 Phone: +1 (800) 585-8585<br>
+        🌍 Website: <a href="https://www.netflix.com" target="_blank">Flix.com</a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="netflix-footer">
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Flix. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
