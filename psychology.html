@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+.welcome-section {
+  text-align: center;
+  padding: 4rem 1.2rem;
+  background: var(--card);
+  border-bottom: 1px solid #910030;
+  box-shadow: 0 6px 16px rgba(255, 122, 162, 0.12);
+}
+
+.welcome-section h1 {
+  font-size: 2.2rem;
+  color:#e50914 ;
+  margin: 0;
+  font-weight: 700;
+}
+.welcome-section h1 {
+  font-size: 2.2rem;
+  color: #e50914;
+  margin: 0;
+  font-weight: 700;
+  position: relative;
+  animation: slideText 5s linear infinite;
+}
+/* Keyframes for sliding effect */
+@keyframes slideText {
+  0% {
+    transform: translateX(100%); /* start off to the right */
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(0); /* move into place */
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0); /* stay visible */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%); /* slide out to the left */
+    opacity: 0;
+  }
+}
+
+.netflix-nav {
+  background-color: #111;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.netflix-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.netflix-nav a {
+  color: #e50914; /* Netflix red */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.netflix-nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #e50914;
+}
+
+
+.watchlist {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.watchlist img {
+  width: 30px;
+  height: 30px;
+}
+
+#current-genre {
+  text-align: center;
+  margin-top: 20px;
+  color: #ff4d4d;
+}
+
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+}
+
+.movie-card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(255,0,0,0.3);
+  padding: 15px;
+}
+
+.poster {
+  width: 100%;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.poster {
+  width: 100%;
+  height: 270px; /* fixed height for consistency */
+  object-fit: cover; /* ensures image fills space without distortion */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 20px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #e50914;
+}
+
+.footer-column p,
+.footer-column ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #e50914;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 13px;
+  color: #777;
+}
+    </style>
+  <meta charset="UTF-8">
+  <title>Cinema Peak</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="netflix-nav">
+  <ul>
+    <li><a href="homepage.html"> Home</a></li>
+    <li><a href="about_us.html"> About Us</a></li>
+     <div class="genre-dropdown">
+    <a href="genre.html" class="genre-label">Genre</a>
+    <div class="genre-menu">
+    <li><a href="anime.html">Anime</a></li>
+    <li><a href="animation.html">Animation</a></li>
+    <li><a href="crime.html">Crime</a></li>
+    <li><a href="history.html">History</a></li>
+    <li><a href="horror.html">Horror</a></li>
+    <li><a href="psychology.html">Psychology</a></li>
+    <li><a href="lokal.html">Lokal</a></li>
+    <li><a href="romance.html">Romance</a></li>
+  </ul>
+</nav>
+<!-- WELCOME -->
+  <section id="welcome" class="welcome-section">
+  <h1>Hello, welcome to Cinema Peak</h1>
+  </section>
+   <section id="Psychology" class="section">
+  <h2 id="current-genre">PSYCHOLOGY</h2>
+
+      <section class="movie-grid">
+    <div class="movie-card" data-genre="PSYCHOLOGY">
+      <img src="image/theplatform.elhoyo.jpg" alt="The Platform (El Hoyo)" class="poster">
+      <h3>The Platform (El Hoyo)</h3>
+      <p>Release: Mac 20, 2020</p>
+        <button onclick="showInfo('the platform (el hoyo)')">Info</button>
+    </div>
+
+  <div class="movie-card" data-genre="PSYCHOLOGY">
+      <img src="image/fractured.jpg" alt="Fractured" class="poster">
+      <h3>Fractured</h3>
+      <p>Release: Oct 11, 2019</p>
+        <button onclick="showInfo('fractured')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="PSYCHOLOGY">
+      <img src="image/ending.jpg" alt="I’m Thinking of Ending Things" class="poster">
+      <h3>I’m Thinking of Ending Things</h3>
+      <p>Release: Sep 4, 2020</p>
+        <button onclick="showInfo('im thinking of ending things')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="PSYCHOLOGY">
+      <img src="image/cam.png" alt="Cam" class="poster">
+      <h3>Cam</h3>
+      <p>Release: Nov 16, 2018</p>
+        <button onclick="showInfo('cam')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="PSYCHOLOGY">
+      <img src="image/thekillerinsideme.png" alt="The Killer Inside Me" class="poster">
+      <h3>The Killer Inside Me</h3>
+      <p>Release: Jun 18, 2010</p>
+        <button onclick="showInfo('the killer inside me')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="PSYCHOLOGY">
+      <img src="image/theinvitation.webp" alt="The Invitation" class="poster">
+      <h3>The Invitation</h3>
+      <p>Release: Mac 13, 2015</p>
+        <button onclick="showInfo('the invitation')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="PSYCHOLOGY">
+      <img src="image/bulbbul.jpg" alt="Bulbbul" class="poster">
+      <h3>Bulbbul</h3>
+      <p>Release: Jun 24, 2020</p>
+        <button onclick="showInfo('bulbbul')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="PSYCHOLOGY">
+      <img src="image/thecall.jpg" alt="The Call" class="poster">
+      <h3>The Call</h3>
+      <p>Release: Nov 27, 2020</p>
+        <button onclick="showInfo('the call')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="PSYCHOLOGY">
+      <img src="image/rebirth.webp" alt="Rebirth" class="poster">
+      <h3>Rebirth</h3>
+      <p>Release: July 15, 2016</p>
+        <button onclick="showInfo('rebirth')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="PSYCHOLOGY">
+      <img src="image/theforestoflove.jpg" alt="The Forest of Love" class="poster">
+      <h3>The Forest of Love</h3>
+      <p>Release: Oct 11, 2019</p>
+        <button onclick="showInfo('the forest of love')">Info</button>
+    </div>
+      </section>
+      <script>
+  function showInfo(movieId) {
+    const data = trailerData[movieId];
+    if (!data) {
+      alert('Trailer tidak dijumpai!');
+      return;
+    }
+    document.getElementById('trailerTitle').textContent = data.title;
+    document.getElementById('trailerVideo').src = data.video;
+    document.getElementById('trailerDesc').textContent = data.synopsis;
+    document.getElementById('trailerRating').textContent = 'Rating: ' + data.rating;
+    document.getElementById('trailerModal').style.display = 'flex';
+  }
+  function closeTrailer() {
+    document.getElementById('trailerModal').style.display = 'none';
+    document.getElementById('trailerVideo').pause();
+    document.getElementById('trailerVideo').src = '';
+  }
+</script>
+<script>
+// Data for each animation movie
+const trailerData = {
+  'the platform (el hoyo)': {
+    title: 'The Platform (El Hoyo)',
+    video: 'videos/The Platform (El Hoyo).mp4',
+    synopsis: 'Prisoners are placed on vertical levels where food descends daily—those on top feast, those below starve. A study of human behavior under extreme inequality.',
+    rating: '7.0/10'
+  },
+  'fractured': {
+    title: 'Fractured',
+    video: 'videos/Fractured.mp4',
+    synopsis: 'A father searches for his wife and daughter after they disappear in a hospital—but nothing is as it seems.',
+    rating: '6.4/10'
+  },
+  'im thinking of ending things': {
+    title: 'I’m Thinking of Ending Things',
+    video: 'videos/ending.mp4',
+    synopsis: 'A woman joins her boyfriend on a trip to meet his parents, while disturbing thoughts blur memory, identity, and time.',
+    rating: '6.6/10'
+  },
+  'cam': {
+    title: 'Cam',
+    video: 'videos/Cam.mp4',
+    synopsis: 'A cam-girl discovers someone identical to her has taken over her online persona.',
+    rating: '5.9/10'
+  },
+  'the killer inside me': {
+    title: 'The Killer Inside Me',
+    video: 'videos/The Killer Inside Me.mp4',
+    synopsis: 'A respected figure hides violent urges while slowly unraveling.',
+    rating: '6.1/10'
+  },
+  'the invitation': {
+    title: 'The Invitation',
+    video: 'videos/The Invitation.mp4',
+    synopsis: 'A man attends a dinner party hosted by his ex-wife and her new husband. As the night unfolds, he grows increasingly suspicious of their intentions, leading to a shocking and deadly revelation.',
+    rating: '6.6/10'
+  },
+  'bulbbul': {
+    title: 'Bulbbul',
+    video: 'videos/Bulbbul.mp4',
+    synopsis: 'A mysterious woman is blamed for murders in a rural village.',
+    rating: '6.5/10'
+  },
+  'the call': {
+    title: 'The Call',
+    video: 'videos/The Call.mp4',
+    synopsis: 'Two women connect through a phone call across 20 years—with deadly consequences.',
+    rating: '7.1/10'
+  },
+  'rebirth': {
+    title: 'Rebirth',
+    video: 'videos/Rebirth.mp4',
+    synopsis: 'A man is lured into a self-help cult with sinister motives.',
+    rating: '5.2/10'
+  },
+  'the forest of love': {
+    title: 'The Forest of Love',
+    video: 'videos/The Forest of Love.mp4',
+    synopsis: 'A charismatic con man entangles a group of youths in violence.',
+    rating: '6.1/10'
+  }
+};
+</script>
+  </script>
+  <script>
+;
+
+  function showTrailer(movieId) {
+    const data = trailerData[movieId];
+    if (!data) {
+      alert('Trailer tidak dijumpai!');
+      return;
+    }
+    document.getElementById('trailerTitle').textContent = data.title;
+    document.getElementById('trailerVideo').src = data.video;
+    document.getElementById('trailerDesc').textContent = data.description;
+    document.getElementById('trailerModal').style.display = 'flex';
+  }
+
+  function closeTrailer() {
+    document.getElementById('trailerModal').style.display = 'none';
+    document.getElementById('trailerVideo').pause();
+    document.getElementById('trailerVideo').src = '';
+  }
+  </script>
+  <!-- Info Modal -->
+  <div id="trailerModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center;">
+    <div style="position:relative; max-width:90vw; max-height:80vh; background:#111; border-radius:12px; box-shadow:0 0 24px #e50914; padding:24px; display:flex; flex-direction:column; align-items:center;">
+      <button onclick="closeTrailer()" style="position:absolute; top:12px; right:16px; background:#e50914; color:#fff; border:none; border-radius:50%; width:36px; height:36px; font-size:20px; cursor:pointer;">&times;</button>
+      <h2 id="trailerTitle" style="color:#e50914; margin-bottom:12px;"></h2>
+      <video id="trailerVideo" width="640" height="360" style="max-width:80vw; max-height:50vh; border-radius:8px; background:#000;" controls></video>
+      <p id="trailerDesc" style="color:#fff; margin-top:10px;"></p>
+      <p id="trailerRating" style="color:#ffd700; margin-top:4px; font-weight:bold;"></p>
+    </div>
+  </div>
+</script>
+<!-- Contact About Us Line COPY THIS --> 
+<footer class="netflix-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Cinema Peak</h3>
+      <p>Rembau<br>Negeri Sembilan<br>Malaysian</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+        <li><a href="https://www.instagram.com/netflix" target="_blank">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@netflix" target="_blank">TikTok</a></li>
+        <li><a href="https://www.facebook.com/netflix" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com/netflix" target="_blank">X</a></li>
+        <li><a href="https://www.netflix.com" target="_blank">Netflix.com</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>More Information</h3>
+      <ul class="info-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="mailto:support@netflix.com">Email Us</a></li>
+        <li><a href="tel:+18005858585">+1 (800) 585-8585</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Copyright line COPY THIS --> 
+ <div class="footer-bottom"> 
+  <p>&copy; 2026 Cinema Peak. All rights reserved.</p> 
+  </div>
+
+</footer>
+    </body>
+</html>

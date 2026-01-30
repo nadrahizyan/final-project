@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+.welcome-section {
+  text-align: center;
+  padding: 4rem 1.2rem;
+  background: var(--card);
+  border-bottom: 1px solid #910030;
+  box-shadow: 0 6px 16px rgba(255, 122, 162, 0.12);
+}
+
+.welcome-section h1 {
+  font-size: 2.2rem;
+  color:#e50914 ;
+  margin: 0;
+  font-weight: 700;
+}
+.welcome-section h1 {
+  font-size: 2.2rem;
+  color: #e50914;
+  margin: 0;
+  font-weight: 700;
+  position: relative;
+  animation: slideText 5s linear infinite;
+}
+/* Keyframes for sliding effect */
+@keyframes slideText {
+  0% {
+    transform: translateX(100%); /* start off to the right */
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(0); /* move into place */
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0); /* stay visible */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%); /* slide out to the left */
+    opacity: 0;
+  }
+}
+
+.netflix-nav {
+  background-color: #111;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.netflix-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.netflix-nav a {
+  color: #e50914; /* Netflix red */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.netflix-nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #e50914;
+}
+
+
+.watchlist {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.watchlist img {
+  width: 30px;
+  height: 30px;
+}
+
+#current-genre {
+  text-align: center;
+  margin-top: 20px;
+  color: #ff4d4d;
+}
+
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+}
+
+.movie-card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(255,0,0,0.3);
+  padding: 15px;
+}
+
+.poster {
+  width: 100%;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.poster {
+  width: 100%;
+  height: 270px; /* fixed height for consistency */
+  object-fit: cover; /* ensures image fills space without distortion */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 20px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #e50914;
+}
+
+.footer-column p,
+.footer-column ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #e50914;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 13px;
+  color: #777;
+}
+    </style>
+  <meta charset="UTF-8">
+  <title>Cinema Peak</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="netflix-nav">
+  <ul>
+    <li><a href="homepage.html"> Home</a></li>
+    <li><a href="about_us.html"> About Us</a></li>
+     <div class="genre-dropdown">
+    <a href="genre.html" class="genre-label">Genre</a>
+    <div class="genre-menu">
+    <li><a href="anime.html">Anime</a></li>
+    <li><a href="animation.html">Animation</a></li>
+    <li><a href="crime.html">Crime</a></li>
+    <li><a href="history.html">History</a></li>
+    <li><a href="horror.html">Horror</a></li>
+    <li><a href="psychology.html">Psychology</a></li>
+    <li><a href="lokal.html">Lokal</a></li>
+    <li><a href="romance.html">Romance</a></li>
+  </ul>
+</nav>
+<!-- WELCOME -->
+  <section id="welcome" class="welcome-section">
+  <h1>Hello, welcome to Cinema Peak</h1>
+  </section>
+   <section id="Lokal" class="section">
+  <h2 id="current-genre">LOKAL</h2>
+      
+      <section class="movie-grid">
+    <div class="movie-card" data-genre="LOKAL">
+      <img src="image/Sheriff_poster.jpg" alt="Sheriff" class="poster">
+      <h3>Sheriff</h3>
+      <p>Release: 2024</p>
+      <button onclick="showInfo('sheriff')">Info</button>
+    </div>
+
+  <div class="movie-card" data-genre="LOKAL">
+      <img src="image/PASKAL_The_Movie_Poster.jpg" alt="PASKAL The Movie" class="poster">
+      <h3>PASKAL The Movie</h3>
+      <p>Release: 2018</p>
+      <button onclick="showInfo('paskal-the-movie')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="LOKAL">
+      <img src="image/Munafik_2_theatrical_poster.jpg" alt="Munafik" class="poster">
+      <h3>Munafik</h3>
+      <p>Release: 2016</p>
+      <button onclick="showInfo('munafik')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="LOKAL">
+      <img src="image/hantu kak limah.jpg" alt="Hantu Kak Limah" class="poster">
+      <h3>Hantu Kak Limah</h3>
+      <p>Release: 2018</p>
+      <button onclick="showInfo('hantu-kak-limah')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="LOKAL">
+      <img src="image/photo_2026-01-11_11-24-28.jpg" alt="Blood Brother: Bara Naga" class="poster">
+      <h3>Blood Brother: Bara Naga</h3>
+      <p>Release: 2025</p>
+      <button onclick="showInfo('blood-brother-baranaga')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="LOKAL">
+      <img src="image/pontianak 100kg.jpg" alt="Pontianak 100kg" class="poster">
+      <h3>Pontianak 100kg</h3>
+      <p>Release: 2023</p>
+      <button onclick="showInfo('pontianak-100kg')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="LOKAL">
+      <img src="image/MALBATT_Misi_Bakara_Poster.jpg" alt="Mallbatt" class="poster">
+      <h3>Mallbatt</h3>
+      <p>Release: 2023</p>
+      <button onclick="showInfo('mallbatt')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="LOKAL">
+      <img src="image/Poster_Polis_EVO.jpg" alt="Polis Evo" class="poster">
+      <h3>Polis Evo</h3>
+      <p>Release: 2015</p>
+      <button onclick="showInfo('polis-evo')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="LOKAL">
+      <img src="image/mama.jpg" alt="M4M4" class="poster">
+      <h3>M4M4</h3>
+      <p>Release: 2018</p>
+      <button onclick="showInfo('m4m4')">Info</button>
+    </div>
+
+    <div class="movie-card" data-genre="LOKAL">
+      <img src="image/the expert.jpg" alt="The Expert" class="poster">
+      <h3>The Expert</h3>
+      <p>Release: 2024</p>
+      <button onclick="showInfo('the-expert')">Info</button>
+    </div>
+      </section>
+      <script>
+  function showInfo(movieId) {
+    const data = trailerData[movieId];
+    if (!data) {
+      alert('Trailer tidak dijumpai!');
+      return;
+    }
+    document.getElementById('trailerTitle').textContent = data.title;
+    document.getElementById('trailerVideo').src = data.video;
+    document.getElementById('trailerDesc').textContent = data.synopsis;
+    document.getElementById('trailerRating').textContent = 'Rating: ' + data.rating;
+    document.getElementById('trailerModal').style.display = 'flex';
+  }
+  function closeTrailer() {
+    document.getElementById('trailerModal').style.display = 'none';
+    document.getElementById('trailerVideo').pause();
+    document.getElementById('trailerVideo').src = '';
+  }
+</script>
+<script>
+// Data for each local movie
+const trailerData = {
+  'sheriff': {
+    title: 'Sheriff',
+    video: 'videos/sheriff.mp4',
+    synopsis: 'A police officer fights to eradicate narcotics crime in Malaysia.',
+    rating: '9.0/10'
+  },
+  'paskal-the-movie': {
+    title: 'PASKAL The Movie',
+    video: 'videos/paskal.mp4',
+    synopsis: 'The elite PASKAL team takes action to defend the country from threats.',
+    rating: '8.0/10'
+  },
+  'munafik': {
+    title: 'Munafik',
+    video: 'videos/munafik.mp4',
+    synopsis: 'A religious teacher faces supernatural disturbances after his wife’s death.',
+    rating: '7.5/10'
+  },
+  'hantu-kak-limah': {
+    title: 'Hantu Kak Limah',
+    video: 'videos/hantu kak limah.mp4',
+    synopsis: 'Villagers are haunted by the return of the ghost Kak Limah.',
+    rating: '8.5/10'
+  },
+  'blood-brother-baranaga': {
+    title: 'Blood Brother: Bara Naga',
+    video: 'videos/blood brothers.mp4',
+    synopsis: 'Two brothers are caught in a conflict and burning revenge.',
+    rating: '10/10'
+  },
+  'pontianak-100kg': {
+    title: 'Pontianak 100kg',
+    video: 'videos/pontianak 100kg.mp4',
+    synopsis: 'A pontianak (vampire) returns to haunt the village with her mysterious weight.',
+    rating: '6.8/10'
+  },
+  'mallbatt': {
+    title: 'Mallbatt',
+    video: 'videos/malbatt- misi bakara.mp4',
+    synopsis: 'The bravery of Malaysian soldiers on a dangerous mission.',
+    rating: '7.8/10'
+  },
+  'polis-evo': {
+    title: 'Polis Evo',
+    video: 'videos/polis evo.mp4',
+    synopsis: 'Two police officers work together to take down a drug syndicate.',
+    rating: '8.0/10'
+  },
+  'm4m4': {
+    title: 'M4M4',
+    video: 'videos/M4M4.mp4',
+    synopsis: 'A mother seeks revenge for her child’s death.',
+    rating: '7.2/10'
+  },
+  'the-expert': {
+    title: 'The Expert',
+    video: 'videos/the experts.mp4',
+    synopsis: 'A forensic expert helps solve difficult cases.',
+    rating: '8.0/10'
+  }
+};
+</script>
+<!-- Info Modal -->
+<div id="trailerModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center;">
+  <div style="position:relative; max-width:90vw; max-height:80vh; background:#111; border-radius:12px; box-shadow:0 0 24px #e50914; padding:24px; display:flex; flex-direction:column; align-items:center;">
+    <button onclick="closeTrailer()" style="position:absolute; top:12px; right:16px; background:#e50914; color:#fff; border:none; border-radius:50%; width:36px; height:36px; font-size:20px; cursor:pointer;">&times;</button>
+    <h2 id="trailerTitle" style="color:#e50914; margin-bottom:12px;"></h2>
+    <video id="trailerVideo" width="640" height="360" style="max-width:80vw; max-height:50vh; border-radius:8px; background:#000;" controls></video>
+    <p id="trailerDesc" style="color:#fff; margin-top:10px;"></p>
+    <p id="trailerRating" style="color:#ffd700; margin-top:4px; font-weight:bold;"></p>
+  </div>
+</div>
+<!-- Contact About Us Line COPY THIS --> 
+<footer class="netflix-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Cinema Peak</h3>
+      <p>Rembau<br>Negeri Sembilan<br>Malaysia</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+        <li><a href="https://www.instagram.com/netflix" target="_blank">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@netflix" target="_blank">TikTok</a></li>
+        <li><a href="https://www.facebook.com/netflix" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com/netflix" target="_blank">X</a></li>
+        <li><a href="https://www.netflix.com" target="_blank">Netflix.com</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>More Information</h3>
+      <ul class="info-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="mailto:support@netflix.com">Email Us</a></li>
+        <li><a href="tel:+18005858585">+1 (800) 585-8585</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Copyright line COPY THIS --> 
+ <div class="footer-bottom"> 
+  <p>&copy; 2026 Cinema Peak. All rights reserved.</p> 
+  </div>
+
+</footer>
+    </body>
+</html>

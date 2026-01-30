@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+.welcome-section {
+  text-align: center;
+  padding: 4rem 1.2rem;
+  background: var(--card);
+  border-bottom: 1px solid #910030;
+  box-shadow: 0 6px 16px rgba(255, 122, 162, 0.12);
+}
+
+.welcome-section h1 {
+  font-size: 2.2rem;
+  color:#e50914 ;
+  margin: 0;
+  font-weight: 700;
+}
+.welcome-section h1 {
+  font-size: 2.2rem;
+  color: #e50914;
+  margin: 0;
+  font-weight: 700;
+  position: relative;
+  animation: slideText 5s linear infinite;
+}
+/* Keyframes for sliding effect */
+@keyframes slideText {
+  0% {
+    transform: translateX(100%); /* start off to the right */
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(0); /* move into place */
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0); /* stay visible */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%); /* slide out to the left */
+    opacity: 0;
+  }
+}
+
+.netflix-nav {
+  background-color: #111;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.netflix-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.netflix-nav a {
+  color: #e50914; /* Netflix red */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.netflix-nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #e50914;
+}
+
+
+.watchlist {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.watchlist img {
+  width: 30px;
+  height: 30px;
+}
+
+#current-genre {
+  text-align: center;
+  margin-top: 20px;
+  color: #ff4d4d;
+}
+
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+}
+
+.movie-card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(255,0,0,0.3);
+  padding: 15px;
+}
+
+.poster {
+  width: 100%;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.poster {
+  width: 100%;
+  height: 270px; /* fixed height for consistency */
+  object-fit: cover; /* ensures image fills space without distortion */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 20px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #e50914;
+}
+
+.footer-column p,
+.footer-column ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #e50914;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 13px;
+  color: #777;
+}
+    </style>
+  <meta charset="UTF-8">
+  <title>Cinema Peak</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="netflix-nav">
+  <ul>
+    <li><a href="homepage.html"> Home</a></li>
+    <li><a href="about_us.html"> About Us</a></li>
+     <div class="genre-dropdown">
+    <a href="genre.html" class="genre-label">Genre</a>
+    <div class="genre-menu">
+    <li><a href="anime.html">Anime</a></li>
+    <li><a href="animation.html">Animation</a></li>
+    <li><a href="crime.html">Crime</a></li>
+    <li><a href="history.html">History</a></li>
+    <li><a href="horror.html">Horror</a></li>
+    <li><a href="psychology.html">Psychology</a></li>
+    <li><a href="lokal.html">Lokal</a></li>
+    <li><a href="romance.html">Romance</a></li>
+  </ul>
+</nav>
+<!-- WELCOME -->
+  <section id="welcome" class="welcome-section">
+  <h1>Hello, welcome to Cinema Peak</h1>
+  </section>
+   <section id="Anime" class="section">
+  <h2 id="current-genre">ANIME</h2>
+      
+      <section class="movie-grid">
+   <div class="movie-card" data-genre="ANIME">
+      <img src="image/ponyo.jpg" alt="Ponyo" class="poster">
+      <h3>Ponyo</h3>
+      <p>Release: 2008</p>
+      <div class="button-group">
+        <button onclick="showInfo('ponyo')">Info</button>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="ANIME">
+      <img src="image/howlsmovingcastle.jpeg" alt="Howl's Moving Castle" class="poster">
+      <h3>Howl's Moving Castle</h3>
+      <p>Release: 2005</p>
+      <div class="button-group">
+        <button onclick="showInfo('holws-moving-castle')">Info</button>
+      </div>
+    </div>   
+
+    <div class="movie-card" data-genre="ANIME">
+      <img src="image/graveofthefireflies.jpg" alt="Grave Of The Fireflies" class="poster">
+      <h3>Grave Of The Fireflies</h3>
+      <p>Release: 1998</p>
+      <div class="button-group">
+        <button onclick="showInfo('grave-of-the-fireflies')">Info</button>
+      </div>
+    </div>   
+
+    <div class="movie-card" data-genre="ANIME">
+      <img src="image/myneighbortotoro.jpeg" alt="My Neighbour Totoro" class="poster">
+      <h3>My Neighbour Totoro</h3>
+      <p>Release: 1998</p>
+      <div class="button-group">
+        <button onclick="showInfo('my-neighbour-totoro')">Info</button>
+      </div>
+    </div>   
+
+    <div class="movie-card" data-genre="ANIME">
+      <img src="image/fromuponpoppyhill.jpeg" alt="From Up On Poppy Hill" class="poster">
+      <h3>From Up On Poppy Hill</h3>
+      <p>Release: 2011</p>
+      <div class="button-group">
+        <button onclick="showInfo('from-up-poppy-hill')">Info</button>
+      </div>
+    </div>   
+
+    <div class="movie-card" data-genre="ANIME">
+      <img src="image/spiritedaway.jpg" alt="Spirited Away" class="poster">
+      <h3>Spirited Away</h3>
+      <p>Release: 2001</p>
+      <div class="button-group">
+        <button onclick="showInfo('spirited-away')">Info</button>
+      </div>
+    </div>   
+
+    <div class="movie-card" data-genre="ANIME">
+      <img src="image/theworldofarrietty.jpeg" alt="The World Of Arrietty" class="poster">
+      <h3>The World Of Arrietty</h3>
+      <p>Release: 2010</p>
+      <div class="button-group">
+        <button onclick="showInfo('the-world-of-arrietty')">Info</button>
+      </div>
+    </div>   
+
+    <div class="movie-card" data-genre="ANIME">
+      <img src="image/thewindrises.jpeg" alt="The Wind Rises" class="poster">
+      <h3>The Wind Rises</h3>
+      <p>Release: 2010</p>
+      <div class="button-group">
+        <button onclick="showInfo('the-wind-rises')">Info</button>
+      </div>
+    </div>   
+
+    <div class="movie-card" data-genre="ANIME">
+      <img src="image/whenmarniewasthere.jpeg" alt="When Marnie Was There" class="poster">
+      <h3>When Marnie Was There</h3>
+      <p>Release: 2014</p>
+      <div class="button-group">
+        <button onclick="showInfo('when-marnie-was-there')">Info</button>
+      </div>
+    </div>   
+
+    <div class="movie-card" data-genre="ANIME">
+      <img src="image/driftinghome.jpeg" alt="Drifting Home" class="poster">
+      <h3>Drifting Home</h3>
+      <p>Release: 2022</p>
+      <div class="button-group">
+        <button onclick="showInfo('drifting-home')">Info</button>
+      </div>
+    </div>   
+      </section>
+      <script>
+  function showInfo(movieId) {
+    const data = trailerData[movieId];
+    if (!data) {
+      alert('Trailer tidak dijumpai!');
+      return;
+    }
+    document.getElementById('trailerTitle').textContent = data.title;
+    document.getElementById('trailerVideo').src = data.video;
+    document.getElementById('trailerDesc').textContent = data.synopsis;
+    document.getElementById('trailerRating').textContent = 'Rating: ' + data.rating;
+    document.getElementById('trailerModal').style.display = 'flex';
+  }
+  function closeTrailer() {
+    document.getElementById('trailerModal').style.display = 'none';
+    document.getElementById('trailerVideo').pause();
+    document.getElementById('trailerVideo').src = '';
+  }
+</script>
+<script>
+// Data for each animation movie
+const trailerData = {
+  'ponyo': {
+    title: 'Ponyo',
+    video: 'videos/ponyo.mp4',
+    description: 'Ponyo Trailer',
+    synopsis: 'During a forbidden excursion to see the surface world, a goldfish princess encounters a human boy named Sosuke, who gives her the name Ponyo. Ponyo longs to become human, and as her friendship with Sosuke grows, she becomes more humanlike. Ponyos father brings her back to their ocean kingdom, but so strong is Ponyos wish to live on the surface that she breaks free, and in the process, spills a collection of magical elixirs that endanger Sosukes village.',
+    rating: '7.6/10'
+  
+    },
+  'holws-moving-castle': {
+    title: 'Howls Moving Castle',
+    video: 'videos/howls.mp4',
+    description: 'Howls Moving Castle Trailer',
+    synopsis: 'Sophie (Emily Mortimer) has an uneventful life at her late fathers hat shop, but all that changes when she befriends wizard Howl (Christian Bale), who lives in a magical flying castle. However, the evil Witch of Waste (Lauren Bacall) takes issue with their budding relationship and casts a spell on young Sophie, which ages her prematurely. Now Howl must use all his magical talents to battle the jealous hag and return Sophie to her former youth and beauty.',
+    rating: '8.2/10'
+  },
+  'grave-of-the-fireflies': {
+    title: 'Grave Of The Fireflies',
+    video: 'videos/grave.mp4',
+    description: 'Grave Of The Fireflies Trailer',
+    synopsis: 'A devastating meditation on the human cost of war, this animated tale follows Seita (Tsutomu Tatsumi), a teenager charged with the care of his younger sister, Setsuko (Ayano Shiraishi), after an American firebombing during World War II separates the two children from their parents. Their tale of survival is as heartbreaking as it is true to life. The siblings rely completely on each other and struggle against all odds to stay together and stay alive.',
+    rating: '8.5/10'
+  },
+  'my-neighbour-totoro': {
+    title: 'My Neighbour Totoro',
+    video: 'videos/totoro.mp4',
+    description: 'My Neighbour Totoro Trailer',
+    synopsis: 'This acclaimed animated tale by director Hayao Miyazaki follows schoolgirl Satsuke and her younger sister, Mei, as they settle into an old country house with their father and wait for their mother to recover from an illness in an area hospital. As the sisters explore their new home, they encounter and befriend playful spirits in their house and the nearby forest, most notably the massive cuddly creature known as Totoro.',
+    rating: '8.1/10'   
+    },
+  'from-up-poppy-hill': {
+    title: 'From Up On Poppy Hill',
+    video: 'videos/poppy.mp4',
+    description: 'From Up On Poppy Hill Trailer',
+    synopsis: 'Umi Matsuzaki, a high school girl who raises signal flags daily in memory of her late father. She meets Shun Kazama, a school newspaper member, and they team up to save their schools, the "Latin Quarter," from demolition for the 1964 Olympics. Their budding romance faces a potential crisis when they discover a shared past, amidst a story of tradition versus modernization.',
+    rating: '7.4/10'
+  },
+  'spirited-away': {
+    title: 'Spirited Away',
+    video: 'videos/spirited.mp4',
+    description: 'Spirited Away Trailer',
+    synopsis: 'In this animated feature by noted Japanese director Hayao Miyazaki, 10-year-old Chihiro (Rumi Hiiragi) and her parents (Takashi Naitô, Yasuko Sawaguchi) stumble upon a seemingly abandoned amusement park. After her mother and father are turned into giant pigs, Chihiro meets the mysterious Haku (Miyu Irino), who explains that the park is a resort for supernatural beings who need a break from their time spent in the earthly realm, and that she must work there to free herself and her parents.',
+    rating: '8.6/10'
+  },
+  'the-world-of-arrietty': {
+    title: 'The World Of Arrietty',
+    video: 'videos/arrietty.mp4',
+    description: 'The World Of Arrietty Trailer',
+    synopsis: 'Arrietty, a tiny teenager, lives with her parents in the recesses of a suburban home, unbeknown to the homeowner and housekeeper. Like others of her kind, Arrietty remains hidden from her human hosts, but occasionally ventures forth from beneath the floorboards to borrow sugar cubes and other supplies. A secret friendship forms when 12-year-old Shawn meets Arrietty, but their relationship could spell danger for Arriettys family.',
+    rating: '7.6/10' 
+  },
+  'the-wind-rises': {
+    title: 'The Wind Rises',
+    video: 'videos/wind.mp4',
+    description: 'The Wind Rises Trailer',
+    synopsis: 'A lifelong love of flight inspires Japanese aviation engineer Jiro Horikoshi (Hideaki Anno), whose storied career includes the creation of the A6M World War II fighter plane. It follows his journey from a young boy with a passion for aviation to an engineer struggling with the moral consequences of his work being used in World War II. The film also explores his poignant, tender romance with Nahoko, a woman suffering from tuberculosis. ',
+    rating: '7.8/10'
+    
+  },
+  'when-marnie-was-there': {
+    title: 'When Marnie Was There',
+    video: 'videos/marnie.mp4',
+    description: 'When Marnie Was There Trailer',
+    synopsis: 'A young girl is sent to the country for health reasons, where she meets an unlikely friend in the form of Marnie, a young girl with flowing blonde hair. As the friendship unravels Marnie has closer ties to the protagonist than we might expect.',
+    rating: '7.6/10'
+  },
+  'drifting-home': {
+    title: 'Drifting Home',
+    video: 'videos/drifting.mp4',
+    description: 'Drifting Home Trailer',
+    synopsis: 'Kosuke and Natsume, sixth-grade students, play in an apartment building that will soon be destroyed over the summer holiday. They get evolved and entangled in a bizarre phenomenon. All they can see is a vast sea all around them.',
+    rating: '6.3/10'
+  }
+};
+</script>
+  <script>
+;
+
+  function showTrailer(movieId) {
+    const data = trailerData[movieId];
+    if (!data) {
+      alert('Trailer tidak dijumpai!');
+      return;
+    }
+    document.getElementById('trailerTitle').textContent = data.title;
+    document.getElementById('trailerVideo').src = data.video;
+    document.getElementById('trailerDesc').textContent = data.description;
+    document.getElementById('trailerModal').style.display = 'flex';
+  }
+
+  function closeTrailer() {
+    document.getElementById('trailerModal').style.display = 'none';
+    document.getElementById('trailerVideo').pause();
+    document.getElementById('trailerVideo').src = '';
+  }
+  </script>
+  <!-- Info Modal -->
+  <div id="trailerModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center;">
+    <div style="position:relative; max-width:90vw; max-height:80vh; background:#111; border-radius:12px; box-shadow:0 0 24px #e50914; padding:24px; display:flex; flex-direction:column; align-items:center;">
+      <button onclick="closeTrailer()" style="position:absolute; top:12px; right:16px; background:#e50914; color:#fff; border:none; border-radius:50%; width:36px; height:36px; font-size:20px; cursor:pointer;">&times;</button>
+      <h2 id="trailerTitle" style="color:#e50914; margin-bottom:12px;"></h2>
+      <video id="trailerVideo" width="640" height="360" style="max-width:80vw; max-height:50vh; border-radius:8px; background:#000;" controls></video>
+      <p id="trailerDesc" style="color:#fff; margin-top:10px;"></p>
+      <p id="trailerRating" style="color:#ffd700; margin-top:4px; font-weight:bold;"></p>
+    </div>
+  </div>
+</script>
+<!-- Contact About Us Line COPY THIS --> 
+<footer class="netflix-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Cinema Peak</h3>
+      <p>Rembau<br>Negeri Sembilan<br>Malaysia</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+        <li><a href="https://www.instagram.com/netflix" target="_blank">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@netflix" target="_blank">TikTok</a></li>
+        <li><a href="https://www.facebook.com/netflix" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com/netflix" target="_blank">X</a></li>
+        <li><a href="https://www.netflix.com" target="_blank">CinemaPeak.com</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>More Information</h3>
+      <ul class="info-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="mailto:support@netflix.com">Email Us</a></li>
+        <li><a href="tel:+18005858585">+1 (800) 585-8585</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Copyright line COPY THIS --> 
+ <div class="footer-bottom"> 
+  <p>&copy; 2026 Cinema Peak. All rights reserved.</p> 
+  </div>
+
+</footer>
+    </body>
+</html>
